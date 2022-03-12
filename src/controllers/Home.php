@@ -1,11 +1,11 @@
 <?php
     class Home extends Controllers{
         public function default(){
-            $this->view("home","form",[]);
+            $this->view("home","home","",[]);
         }
         public function sayHi(){
-            $name = $this->model("SinhVien");
-            $this->view("home","sayHi",$name->getName());
+            echo "hello ";
+            echo $_SESSION['name'];
         }
         public function check(){
             $data = $_POST['demo'];
