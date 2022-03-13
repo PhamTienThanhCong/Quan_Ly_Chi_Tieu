@@ -2,13 +2,13 @@
 <html lang="vi">
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap">
     <link rel="shortcut icon" href="<?php echo $actual_link ?>\public\images\default\icon.ico" type="image/x-icon">
-    <title>Đăng nhập</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="<?php echo $actual_link ?>/public/css/login.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    <title>Đăng nhập</title>
    </head>
 <body>
   <div class="container">

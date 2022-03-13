@@ -44,8 +44,20 @@
             }
         }
 
-        function logout(){
-            session_destroy();
+        function getInfoUser(){
+            if(isset($_COOKIE['token'])){
+                $token = $_COOKIE['token'];
+
+                $sql = "SELECT * FROM `user` WHERE `token` = '$token'";
+
+                $user = mysqli_query($this->connection,$sql);
+                $user = mysqli_fetch_array($user);
+                
+                if (isset($user['email'])){
+                    $_SESSION['id'] = $user['id'];
+                    $_SESSION['name'] = $user['name'];
+                }
+            }
         }
     }
 ?>

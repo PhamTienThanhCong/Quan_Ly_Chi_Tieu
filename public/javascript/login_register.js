@@ -69,7 +69,7 @@ $(document).ready(function () {
                 if (response == "0"){
                     toastr["error"]("Email hoặc mật khẩu khồng đúng", "Đăng nhập thất bại");
                 }else if (response == "1"){
-                    toastr["success"]("ok", "Lỗi");
+                    toastr["success"]("Đăng nhập thành công", "Thành công");
                 }
             }
         });

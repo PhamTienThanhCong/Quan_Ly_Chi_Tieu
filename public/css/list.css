@@ -1,0 +1,79 @@
+.container{
+    color: black;
+    width: 100%;
+}
+
+
+
+.title-name-list{
+    margin-top: 8px;
+    margin-bottom: 8px;
+    color: #000;
+    text-align: center;
+    font-size: 30px;
+}
+.name-item{
+    font-size: 18px;
+}
+.name-info{
+    font-size: 16px;
+}
+.list-item-save{
+    width: 750px;
+    margin: auto;
+    list-style-type: none;
+}
+.list-item-save li{
+    margin-top: 3px;
+    margin-bottom: -25px;
+    padding: 10px
+}
+.action-list-item-this{
+    text-decoration: none;
+    font-size: 22px;
+    margin-right: 20px;
+    margin-left: -5px;
+}
+.action-list-item{
+    width: 100%;
+    text-align: right;
+    transform: translateY(-28px)
+}
+#add-item{
+    color: rgb(53, 113, 224);
+    text-decoration: none;
+    font-size: 50px;
+    position: fixed;
+    bottom: 100px;
+    right: 15px;
+    background-color: white;
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 1025px){
+    
+}
+@media screen and (max-width: 800px){
+    .list-item-save{
+        width: calc(100%-50px);
+    }
+}
+@media screen and (max-width: 480px){
+    .title-name-list{
+        font-size: 25px;
+    }
+    .list-item-save{
+        width: calc(100%);
+    }
+    .hidden-footer{
+        height: 80px;
+    }
+    .hidden-footer-menu{
+        height: 80px;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        background-color: white;
+        z-index: 1
+    }
+}

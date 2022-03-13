@@ -1,15 +1,16 @@
 <?php
     class Home extends Controllers{
         public function default(){
-            $this->view("home","home","",[]);
+            $this->view("home","Tổng quan","",[]);
         }
-        public function sayHi(){
-            echo "hello ";
-            echo $_SESSION['name'];
+        public function khoanThu(){
+            $this->view("home","Khoản thu","list",[]);
         }
-        public function check(){
-            $data = $_POST['demo'];
-            echo $data;
+        public function khoanChi(){
+
+        }
+        public function huTaiChi(){
+
         }
     }
 ?>

@@ -39,13 +39,13 @@
     display: none;
   }
   
-  .icon {
+  ul li a .icon {
     block-size: 1em;
     display: inline-block;
     fill: currentcolor;
     inline-size: 1em;
     vertical-align: middle;
-
+    transform: translateY(10px);
   }
   
   .icon--2x {
@@ -87,6 +87,9 @@
     padding: var(--navigation-anchor-padding);
     position: relative;
     text-decoration: none;
+    width: 95px;
+    display: flex;
+    justify-content: center;
   }
   
   .navigation a:focus::after,
@@ -111,6 +114,7 @@
   
   .navigation--inline ul {
     display: flex;
+    color: #f2f2f2;
   }
   .title-span-click{
       position: absolute;
@@ -120,4 +124,5 @@
       text-align: center;
       margin-top: 6px;
       display:none;
+      font-size: 19px;
   }
