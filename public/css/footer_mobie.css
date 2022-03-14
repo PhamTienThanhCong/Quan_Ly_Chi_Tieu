@@ -90,6 +90,7 @@
     width: 95px;
     display: flex;
     justify-content: center;
+    color: white;
   }
   
   .navigation a:focus::after,

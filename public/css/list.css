@@ -3,8 +3,6 @@
     width: 100%;
 }
 
-
-
 .title-name-list{
     margin-top: 8px;
     margin-bottom: 8px;
@@ -44,21 +42,103 @@
     text-decoration: none;
     font-size: 50px;
     position: fixed;
-    bottom: 100px;
-    right: 15px;
+    bottom: 20px;
+    right: 25px;
     background-color: white;
     border-radius: 50%;
+    height: 53px;
+    border: none;
+    outline: none;
+}
+.close-models{
+    margin-left: 0;
+    font-size: 28px;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border: none;
+    outline: none;
+    font-size: 35px;
+    transform: translateY(-5px);
+}
+.modal-header{
+    padding-bottom: 0px;
+}
+#add-item .fa-solid{
+    transform: translateY(-12px)
+}
+p{
+    margin-bottom: 0;
+}
+hr{
+    margin: 0;
+}
+.container-choice-date{
+    width: 700px;
+    margin: auto;
+}
+.container-choice-date .box{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.container-choice-date .box button{
+    outline: none;
+    border: none;
+    margin-left: 15px;
+    width: 150px;
+    background-color: rgb(116, 165, 221);
+    border-radius: 5px;
+}
+.calender-fill-title{
+    font-size: 18px;
+}
+.form-control{
+    width: unset;
+}
+.modal-body input{
+    width: 100%;
+    outline: none;
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 10px;
+}
+.modal-body textarea{
+    width: 100%;
+    border: 1px solid #ccc;
+    padding-left: 10px;
+    border-radius: 5px;
+    outline: none;
 }
 
 @media screen and (max-width: 1025px){
+    body {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
     
 }
 @media screen and (max-width: 800px){
+    .container-choice-date{
+        width: 100%;
+    }
     .list-item-save{
-        width: calc(100%-50px);
+        width: 100%;
+    }
+    body {
+        padding-left: 0px;
+        padding-right: 0px;
     }
 }
 @media screen and (max-width: 480px){
+    .container-choice-date{
+        width: 100%;
+    }
+    body {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
     .title-name-list{
         font-size: 25px;
     }
@@ -76,4 +156,21 @@
         background-color: white;
         z-index: 1
     }
+    #add-item{
+        bottom: 100px;
+        right: 15px;
+    }
+    .container-choice-date .box button{
+        margin-left: 0;
+        margin-top: 10px;
+    }
 }
+
+#content {
+    height: 100%;
+  }
+  
+  #content > md-content {
+    background-color: #eee;
+  }
+

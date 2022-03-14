@@ -5,6 +5,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/css/datepicker.css">
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap">
     <link rel="stylesheet" href="<?php echo $actual_link ?>/public/css/footer_mobie.css">
     <link rel="stylesheet" href="<?php echo $actual_link ?>/public/css/home.css">
@@ -50,39 +54,35 @@
     <nav class="mobie-alert navigation navigation--inline">
         <ul>
             <li>
-                <a href="#">
+                <a class="home-mobie-icon" href="#">
                     <span class="title-span-click">Tổng</span>
                     <svg class="icon icon--2x">
                         <use xlink:href="#icon-home" />
                     </svg>
-                    <span class="invisible">Home</span>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a class="home-mobie-icon" href="#">
                     <span class="title-span-click">Thu</span>
                     <svg class="icon icon--2x">
                         <use xlink:href="#icon-search" />
                     </svg>
-                    <span class="invisible">Search</span>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a class="home-mobie-icon" href="#">
                     <span class="title-span-click">Chi</span>
                     <svg class="icon icon--2x">
                         <use xlink:href="#icon-cart" />
                     </svg>
-                    <span class="invisible">Products</span>
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a class="home-mobie-icon" href="#">
                     <span class="title-span-click">Hũ</span>
                     <svg class="icon icon--2x">
                         <use xlink:href="#icon-bell" />
                     </svg>
-                    <span class="invisible">Notifications</span>
                 </a>
             </li>
 
