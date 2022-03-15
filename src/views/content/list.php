@@ -16,20 +16,20 @@
             </form>
         </div>
     </div>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/js/datepicker.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/air-datepicker/2.2.3/js/i18n/datepicker.en.min.js"></script>
-
+    
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 </div>
 
 <hr>
-<ul class="list-item-save">
+<ul class="list-item-save" id="list-item-save">
     <li>
         <p class="name-item">
             <b>Tên:</b>
@@ -51,86 +51,7 @@
         </div>
     </li>
     <hr>
-    <li>
-        <p class="name-item">
-            <b>Tên:</b> Gói hàng shoppe mất nhiều tiền quá vì nó đặt vl nhưng suy cho cùng lại đẹp
-        </p>
-        <p class="name-info">
-            - Số tiền: 1,500
-        </p>
-        <p class="name-info">
-            - Thời gian: 22/2/2022
-        </p>
-        <div class="action-list-item">
-            <a class="action-list-item-this" href="">
-                <i class="fa-regular fa-pen-to-square"></i>
-            </a>
-            <a class="action-list-item-this" href="">
-                <i class="fa-regular fa-trash-can"></i>
-            </a>
-        </div>
-    </li>
-    <hr>
-    <li>
-        <p class="name-item">
-            <b>Tên:</b> Gói hàng shoppe mất nhiều tiền quá vì nó đặt vl nhưng suy cho cùng lại đẹp
-        </p>
-        <p class="name-info">
-            - Số tiền: 1,500
-        </p>
-        <p class="name-info">
-            - Thời gian: 22/2/2022
-        </p>
-        <div class="action-list-item">
-            <a class="action-list-item-this" href="">
-                <i class="fa-regular fa-pen-to-square"></i>
-            </a>
-            <a class="action-list-item-this" href="">
-                <i class="fa-regular fa-trash-can"></i>
-            </a>
-        </div>
-    </li>
-    <hr>
-    <li>
-        <p class="name-item">
-            <b>Tên:</b> Gói hàng shoppe mất nhiều tiền quá vì nó đặt vl nhưng suy cho cùng lại đẹp
-        </p>
-        <p class="name-info">
-            - Số tiền: 1,500
-        </p>
-        <p class="name-info">
-            - Thời gian: 22/2/2022
-        </p>
-        <div class="action-list-item">
-            <a class="action-list-item-this" href="">
-                <i class="fa-regular fa-pen-to-square"></i>
-            </a>
-            <a class="action-list-item-this" href="">
-                <i class="fa-regular fa-trash-can"></i>
-            </a>
-        </div>
-    </li>
-    <hr>
-    <li>
-        <p class="name-item">
-            <b>Tên:</b> Gói hàng shoppe mất nhiều tiền quá vì nó đặt vl nhưng suy cho cùng lại đẹp
-        </p>
-        <p class="name-info">
-            - Số tiền: 1,500
-        </p>
-        <p class="name-info">
-            - Thời gian: 22/2/2022
-        </p>
-        <div class="action-list-item">
-            <a class="action-list-item-this" href="">
-                <i class="fa-regular fa-pen-to-square"></i>
-            </a>
-            <a class="action-list-item-this" href="">
-                <i class="fa-regular fa-trash-can"></i>
-            </a>
-        </div>
-    </li>
-    <hr>
+    
 </ul>
 
 
@@ -140,6 +61,7 @@
     </button>
 </div>
 
+<!-- Modal tao moi -->
 <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
 
@@ -149,21 +71,21 @@
                 <button type="button" class="close-models" data-dismiss="modal">&times;</button>
                 <h4 class="modal-title">Thêm chi tiêu</h4>
             </div>
-            <form action="">
+            <form method="post" id="form-save-new-value" action="<?php echo $actual_link ?>/JsonPosessing/save_data/expense">
                 <div class="modal-body">
                     <p>Ngày ghi</p>
-                    <input type="date" name="day" id="Day-picker-form" data-date-format="dd/mm/yyyy" placeholder="Lựa chọn ngày">
+                    <input type="date" name="day" id="Day-picker-form" data-date-format="dd/mm/yyyy" placeholder="Lựa chọn ngày" required>
                     <p>Tên khoản</p>
-                    <input type="text" name="name-title">
+                    <input type="text" name="name-title" required>
                     <p>Số tiền</p>
-                    <input type="text" name="price">
+                    <input type="number" name="price" required>
                     <p>Ghi chú</p>
                     <textarea name="description" id="" cols="30" rows="4"></textarea>
 
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-default" style="background-color: #5cc4ef"> lưu lại</button>
-                    <button type="button" class="btn btn-default" style="background-color: #d75e5e" data-dismiss="modal">Đóng</button>
+                    <button type="button" id="btn-form-close" class="btn btn-default" style="background-color: #d75e5e" data-dismiss="modal">Đóng</button>
                 </div>
             </form>
         </div>
@@ -171,10 +93,6 @@
     </div>
 </div>
 
-<!-- Button trigger modal -->
-<button class="btn btn-primary" type="button" data-toggle="modal" data-target="#exampleModalCenter">
-    Launch demo modal
-</button>
 
 <!-- Modal accet xoa -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -192,11 +110,11 @@
                 <p id="modal-body-date"></p>
             </div>
             <div class="modal-footer">
-                <form action="">
+                <form id="form-delete-value" method="POST" action="<?php echo $actual_link ?>/JsonPosessing/delete_data/expense">
                     <input type="hidden" name="id" id="modal-form-id">
                     <button class="btn btn-danger">Xác nhận xóa</button>
                 </form>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" id="btn-form-delete-close" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
@@ -213,7 +131,7 @@
                 <button type="button" class="close-models" data-dismiss="modal">&times;</button>
                 <h4 class="modal-title">Chỉnh sửa chi tiêu</h4>
             </div>
-            <form action="">
+            <form method="post" id="form-edit-value" action="<?php echo $actual_link ?>/JsonPosessing/update_data/expense">
                 <div class="modal-body">
                     <input type="hidden" id="form-modal-id" name="id" > 
                     <p>Ngày ghi</p>
@@ -221,14 +139,14 @@
                     <p>Tên khoản</p>
                     <input type="text" id="form-modal-title" name="name-title">
                     <p>Số tiền</p>
-                    <input type="text" id="form-modal-price" name="price">
+                    <input type="number" id="form-modal-price" name="price">
                     <p>Ghi chú</p>
                     <textarea id="form-modal-description" name="description" id="" cols="30" rows="4"></textarea>
 
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-default" style="background-color: #5cc4ef"> lưu lại</button>
-                    <button type="button" class="btn btn-default" style="background-color: #d75e5e" data-dismiss="modal">Đóng</button>
+                    <button type="button" id="btn-form-edit-close" class="btn btn-default" style="background-color: #d75e5e" data-dismiss="modal">Đóng</button>
                 </div>
             </form>
         </div>
