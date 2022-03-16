@@ -59,7 +59,9 @@ $(document).ready(function () {
         let check = true;
         event.preventDefault();
         var currentLocation = window.location;
+        currentLocationHome = currentLocation.protocol + "//" + currentLocation.host + "/home";
         currentLocation = currentLocation.protocol + "//" + currentLocation.host + "/account/loginProcessing";
+        
         $.ajax({
             type: "POST",
             url: currentLocation,
@@ -70,6 +72,7 @@ $(document).ready(function () {
                     toastr["error"]("Email hoặc mật khẩu khồng đúng", "Đăng nhập thất bại");
                 }else if (response == "1"){
                     toastr["success"]("Đăng nhập thành công", "Thành công");
+                    window.location.replace(currentLocationHome);
                 }
             }
         });

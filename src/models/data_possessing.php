@@ -16,10 +16,20 @@ class data_possessing extends ConnectDB{
                     '$created_at'
                 )";
         mysqli_query($this->connection,$sql);
+        $sql = "SELECT * FROM `data_$type` WHERE `id_user` = '$id_user' ORDER BY id_$type DESC";
+        
+        $id_result = mysqli_query($this->connection,$sql);
+        $id_result = mysqli_fetch_array($id_result);
+        
         mysqli_close($this->connection);
+        return $id_result["id_$type"];
     }
-    function view_data($type,$id){
-        $sql = "SELECT * FROM `data_$type` WHERE `id_user` = '$id'";
+    function view_data($type,$id,$date){
+        if ($date == ""){
+            $sql = "SELECT * FROM `data_$type` WHERE `id_user` = '$id'";
+        }else{
+            $sql = "SELECT * FROM `data_$type` WHERE `id_user` = '$id' AND 	created_at_$type = '$date'";
+        }
         $data_result = mysqli_query($this->connection,$sql);
         // $data = mysqli_fetch_array($data);
         $data = [];

@@ -15,8 +15,8 @@ class JsonPosessing extends Controllers{
         $price = $_POST['price'];
         $description = $_POST['description'];
         $created_at = $_POST['day'];
-        $save->saveNewData($type,$id_user,$title,$price,$description,$created_at);
-        echo "1";
+        echo $save->saveNewData($type,$id_user,$title,$price,$description,$created_at);
+        
     }
     public function export_data($type){
         if (isset($_SESSION['id']) == false){
@@ -24,9 +24,14 @@ class JsonPosessing extends Controllers{
             exit();
         }
         $type = $type[0];
+        $date = "";
+        if (isset($_POST['date'])){
+            $date = $_POST['date'];
+        }
         $data = $this->model("data_possessing");
         $id_user = $_SESSION['id'];
-        $date_res = $data->view_data($type,$id_user);
+        $date_res = $data->view_data($type,$id_user,$date);
+        // sleep(3);
         echo json_encode($date_res);
     }
     public function update_data($type){

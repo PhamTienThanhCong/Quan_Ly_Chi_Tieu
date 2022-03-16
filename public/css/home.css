@@ -148,6 +148,7 @@ header ul .search-icon:hover .items-user{
 .mobie-alert{
   display: none;
 }
+
 @media screen and (max-width: 1025px) {
   header{
     padding: 10px 40px 0px 0px;
