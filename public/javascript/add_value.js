@@ -44,7 +44,7 @@ function responseError() {
     document.getElementById('list-item-save').innerHTML = `
     <div class="body-loading">
         <h3>
-            Dữ liệu trống
+            Dữ liệu ngày `+$('#Day-picker').val()+` không tồn tại
         </h3>
     </div>
     `

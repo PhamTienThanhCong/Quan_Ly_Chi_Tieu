@@ -60,7 +60,7 @@ $(document).ready(function () {
         event.preventDefault();
         var currentLocation = window.location;
         currentLocationHome = currentLocation.protocol + "//" + currentLocation.host + "/home";
-        currentLocation = currentLocation.protocol + "//" + currentLocation.host + "/account/loginProcessing";
+        currentLocation = currentLocation.protocol + "//" + currentLocation.host + "/account/login_processing";
         
         $.ajax({
             type: "POST",

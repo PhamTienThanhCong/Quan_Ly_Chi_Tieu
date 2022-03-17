@@ -45,7 +45,7 @@
     fill: currentcolor;
     inline-size: 1em;
     vertical-align: middle;
-    transform: translateY(10px);
+    transform: translateY(-14px);
   }
   
   .icon--2x {
@@ -126,4 +126,7 @@
       margin-top: 6px;
       display:none;
       font-size: 19px;
+  }
+  .mobie-alert{
+    height: 50px;
   }

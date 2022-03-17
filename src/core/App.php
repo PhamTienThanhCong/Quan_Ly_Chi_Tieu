@@ -1,7 +1,7 @@
 <?php
 class App{
     private $url = [];
-    private $controller = "Home";
+    private $controller = "home";
     private $action = "default";
     private $route = [];
     function __construct() {
@@ -20,8 +20,10 @@ class App{
 
     public function getController(){
         if (isset($this->url[0])){
-            if (file_exists("./src/controllers/". $this->url[0] .".php")){
-                $this->controller = $this->url[0];
+            if (file_exists("./src/controllers/". strtolower($this->url[0]) .".php")){
+                $this->controller = strtolower($this->url[0]);
+            }else{
+                $this->controller = "home";
             }
             unset($this->url[0]);
         }
@@ -31,8 +33,10 @@ class App{
 
     public function getAction(){
         if (isset($this->url[1])){
-            if (method_exists($this->controller, $this->url[1])){
-                $this->action = $this->url[1];
+            if (method_exists($this->controller, strtolower($this->url[1]))){
+                $this->action = strtolower($this->url[1]);
+            }else{
+                $this->action = "errors";
             }
             unset($this->url[1]);
         }

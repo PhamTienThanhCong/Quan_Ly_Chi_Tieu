@@ -31,8 +31,8 @@
 ?>
 
 <style>
-    <?php echo "#".$type?> .title-span-click{
-      display: block;
+    <?php echo "#".$type?> {
+      background-color: black;
     }
 </style>
 
@@ -74,25 +74,25 @@
         <ul>
             <li>
                 <a id="overView" class="home-mobie-icon" href="<?php echo $actual_link ?>/home">
-                    <span class="title-span-click">Tổng</span>
+                    <!-- <span class="title-span-click">Tổng</span> -->
                     <i class="icon icon--2x fa-solid fa-chart-pie"></i>
                 </a>
             </li>
             <li>
                 <a id="revenue" class="home-mobie-icon" href="<?php echo $actual_link ?>/home/khoanThu">
-                    <span class="title-span-click">Thu</span>
+                    <!-- <span class="title-span-click">Thu</span> -->
                     <i class="icon icon--2x fa-solid fa-hand-holding-dollar"></i>
                 </a>
             </li>
             <li>
                 <a id="expense" class="home-mobie-icon" href="<?php echo $actual_link ?>/home/khoanChi">
-                    <span class="title-span-click">Chi</span>
+                    <!-- <span class="title-span-click">Chi</span> -->
                     <i class="icon icon--2x fa-solid fa-cart-plus"></i>
                 </a>
             </li>
             <li>
                 <a id="FinancialJar" class="home-mobie-icon" href="<?php echo $actual_link ?>/home/huTaiChi">
-                    <span class="title-span-click">Hũ</span>
+                    <!-- <span class="title-span-click">Hũ</span> -->
                     <i class="icon icon--2x fa-solid fa-scale-balanced"></i>
                 </a>
             </li>

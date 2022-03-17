@@ -119,14 +119,16 @@ header ul li.btn span.show:before{
 .items-user{
   position:fixed;
   background-color: white;
-  width: 240px;
-  top: 51px;
+  width: 180px;
+  top: 53px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   display: none;
 }
 .items-user hr{
   width: 100%;
-  background-color: #cccccc
+  background-color: #cccccc;
+  margin-top:5px;
+  margin-bottom: 5px;
 }
 .items-user li{
   display: block;
@@ -192,6 +194,11 @@ header ul .search-icon:hover .items-user{
   }
 }
 @media screen and (max-width: 480px) {
+  header {
+    height: 40px;
+    padding-top: 0px
+  }
+  
   header ul{
     flex-wrap: nowrap;
   }
@@ -203,17 +210,26 @@ header ul .search-icon:hover .items-user{
     margin-left: 3px;
   }
   header ul .search-icon{
+    height: 30px;
     width: 40vmin;
     margin-right: -20px;
   }
   header ul .search-icon input{
     width: 30vmin;
   }
-  header ul li .search-icon{
-    width: 10vmin;
+  header ul li .search-icon {
+    height: 30px;
+    width: 30px;
+  }
+  header ul .search-icon .icon{
+    line-height: 32px;
   }
   .items-user{
+    top:40px;
     width: 40vmin;
+  }
+  .body:hover .items-user{
+    display:none;
   }
   .mobie-alert{
     display: block;

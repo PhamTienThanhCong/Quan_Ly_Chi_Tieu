@@ -164,6 +164,10 @@ hr{
         margin-left: 0;
         margin-top: 10px;
     }
+    header ul li.logo{
+        font-size: 25px;
+        padding-left: 10px;
+      }
 }
 
 #content {

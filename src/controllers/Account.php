@@ -1,5 +1,5 @@
 <?php
-    class Account extends Controllers{
+    class account extends Controllers{
         public function default(){
             $this->view("not_found","login","",[]);
         }
@@ -8,7 +8,7 @@
             $this->checkWasLogin();
             $this->view("login","","",[]);
         }
-        public function Register(){
+        public function register(){
 
             $this->checkWasLogin();
             $name = addslashes($_POST["name"]);
@@ -19,7 +19,7 @@
                 die("-1");
             }
 
-            $save = $this->model("User");
+            $save = $this->model("user");
 
             if ($save->CreateUser($name,$email,$password)){
                 echo 1;
@@ -27,7 +27,7 @@
                 echo 0;
             }
         }
-        public function loginProcessing(){
+        public function login_processing(){
             $this->checkWasLogin();
 
             $email = addslashes($_POST['email']);
@@ -37,7 +37,7 @@
                 $remember = 1;
             }
             
-            $login = $this->model("User");
+            $login = $this->model("user");
 
             if($login->loginUser($email,$password,$remember)){
                 echo "1";

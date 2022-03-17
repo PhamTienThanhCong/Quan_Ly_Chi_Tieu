@@ -4,17 +4,20 @@
             $this->checkLogin();
             $this->view("home","Tổng quan","overView",[]);
         }
-        public function khoanThu(){
+        public function khoanthu(){
             $this->checkLogin();
             $this->view("home","Khoản thu","list",[]);
         }
-        public function khoanChi(){
+        public function khoanchi(){
             $this->checkLogin();
             $this->view("home","Khoản chi","list",[]);
         }
-        public function huTaiChi(){
+        public function hutaichi(){
             $this->checkLogin();
             $this->view("home","Hũ tài chính","FinancialJar",[]);
+        }
+        public function errors(){
+            $this->view("not_found","404 not found",[]);
         }
     }
 ?>
