@@ -26,15 +26,14 @@ class data_possessing extends ConnectDB{
     }
     function view_data($type,$id,$date){
         if ($date == ""){
-            $sql = "SELECT * FROM `data_$type` WHERE `id_user` = '$id'";
+            $sql = "SELECT * FROM `data_$type` WHERE `id_user` = '$id' ORDER BY `created_at_$type` ASC  LIMIT 20 ";
         }else{
-            $sql = "SELECT * FROM `data_$type` WHERE `id_user` = '$id' AND 	created_at_$type = '$date'";
+            $sql = "SELECT * FROM `data_$type` WHERE `id_user` = '$id' AND 	created_at_$type = '$date' ORDER BY created_at_$type ASC";
         }
         $data_result = mysqli_query($this->connection,$sql);
         // $data = mysqli_fetch_array($data);
         $data = [];
-
-        foreach($data_result as $index=>$data_res){
+        foreach($data_result as $data_res){
             $data[] = [
                 "id"=>$data_res["id_$type"],
                 "title"=>$data_res["title_$type"],

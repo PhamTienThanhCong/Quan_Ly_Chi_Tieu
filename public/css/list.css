@@ -178,3 +178,12 @@ hr{
     background-color: #eee;
   }
 
+  .alert-day-list{
+    font-size: 18px;
+    margin-bottom: -10px;
+    margin-top: 15px;
+    color: rgb(17 40 157);
+    width: 100%;
+    text-align: center;
+  }
+

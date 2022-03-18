@@ -31,7 +31,7 @@ $('#Day-picker-form').val(tokay_input);
 
 $(document).ready(function () {
     waitForData()
-    var date = $('#Day-picker').val();
+    var date = "";
     // khởi tạo
     requestData(hostName, date);
     

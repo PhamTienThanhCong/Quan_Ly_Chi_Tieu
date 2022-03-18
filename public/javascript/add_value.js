@@ -10,9 +10,23 @@ function waitForData(){
 
 function addNewList(){
     document.getElementById('list-item-save').innerHTML = "";
+    var day = value_res[0]['created_at'];
     for (let i = 0 ; i < value_res.length  ; i++) {
+        if (day != value_res[i]['created_at']){
+            document.getElementById('list-item-save').innerHTML = `
+                <div class = "alert-day-list"> 
+                <i class="fa-regular fa-calendar-days"></i> 
+                Bản ghi ngày: ` + formatDate(day) + `</div>
+            ` + document.getElementById('list-item-save').innerHTML;
+            day = value_res[i]['created_at'];
+        }
         add_new_ban_gi(value_res[i]['id'], value_res[i]['title'], value_res[i]['price'], value_res[i]['created_at'], value_res[i]['description'])
     }
+    document.getElementById('list-item-save').innerHTML = `
+                <div class = "alert-day-list"><i class="fa-regular fa-calendar-days"></i> 
+                Bản ghi ngày: ` + formatDate(value_res[value_res.length - 1]['created_at']) + `</div>
+            ` + document.getElementById('list-item-save').innerHTML;
+
     $('.action-delete').off('click');
     $('.action-edit').off('click');
 }
@@ -110,8 +124,11 @@ function formatDate(date) {
 }
 
 function formatDate2(date) {
+    if (date == ""){
+        return "";
+    }
     var d = date.split('/');
-    return d[2] + '-' + d[1] + '-' + d[0]
+    return d[2] + '-' + d[1] + '-' + d[0];
 }
 
 function requestData(hostName, date){
