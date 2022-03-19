@@ -11,6 +11,10 @@
         public function register(){
 
             $this->checkWasLogin();
+            if (isset($_POST["name"]) == false || isset($_POST["email"]) == false ||isset($_POST["password"]) == false){
+                die("-1");
+            }
+
             $name = addslashes($_POST["name"]);
             $email = addslashes($_POST['email']);
             $password = addslashes($_POST['password']);
@@ -19,9 +23,11 @@
                 die("-1");
             }
 
+            $secure_pass = password_hash($password, PASSWORD_BCRYPT);
+
             $save = $this->model("user");
 
-            if ($save->CreateUser($name,$email,$password)){
+            if ($save->CreateUser($name,$email,$secure_pass)){
                 echo 1;
             }else{
                 echo 0;
@@ -29,6 +35,9 @@
         }
         public function login_processing(){
             $this->checkWasLogin();
+            if (isset($_POST["email"]) == false ||isset($_POST["password"]) == false){
+                die("0");
+            }
 
             $email = addslashes($_POST['email']);
             $password = addslashes($_POST['password']);

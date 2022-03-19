@@ -28,17 +28,20 @@
         }
 
         function loginUser($email,$password,$remember){
-            $sql = "SELECT * FROM `user` WHERE `email` = '$email' AND `password` = '$password'";
+            $sql = "SELECT * FROM `user` WHERE `email` = '$email'";
             $user = mysqli_query($this->connection,$sql);
             $user = mysqli_fetch_array($user);
 
-            if (isset($user['email'])){
-                $_SESSION['id'] = $user['id'];
-                $_SESSION['name'] = $user['name'];
-                if ($remember == 1){
-                    setcookie("token", $user['token'], time() + (86400 * 30), "/");
-                }
-                return true;
+            if (isset($user['password'])){
+                $verify = password_verify($password, $user['password']);
+                if ($verify){
+                    $_SESSION['id'] = $user['id'];
+                    $_SESSION['name'] = $user['name'];
+                    if ($remember == 1){
+                        setcookie("token", $user['token'], time() + (86400 * 30), "/");
+                    }
+                    return true;
+                }  
             }else{
                 return false;
             }
