@@ -1,7 +1,29 @@
 <?php
 class JsonPosessing extends Controllers{
-    public function default(){
-        echo "test";
+    public function binance_api(){
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => 'https://p2p.binance.com/bapi/c2c/v2/friendly/c2c/adv/search',
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'POST',
+            CURLOPT_POSTFIELDS =>'{"page":1,"rows":10,"payTypes":[],"asset":"USDT","tradeType":"BUY","fiat":"VND","publisherType":null}',
+            CURLOPT_HTTPHEADER => array(
+                'Content-Type: application/json',
+                'Cookie: cid=FBb5Btvt'
+            ),
+        ));
+
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+        echo $response;
+
     }
     public function save_data($type){
         if (isset($_SESSION['id']) == false){

@@ -45,8 +45,8 @@
             <li class="btn"><span class="fas fa-bars"></span></li>
             <div class="items">
                 <li><a href="<?php echo $actual_link ?>/home">Tổng quan</a></li>
-                <li><a href="<?php echo $actual_link ?>/home/khoanThu">Khoản thu</a></li>
-                <li><a href="<?php echo $actual_link ?>/home/khoanChi">Khoản chi</a></li>
+                <li><a href="<?php echo $actual_link ?>/home/Thu">Khoản thu</a></li>
+                <li><a href="<?php echo $actual_link ?>/home/Chi">Khoản chi</a></li>
                 <li><a href="<?php echo $actual_link ?>/home/huTaiChi">Hũ tài chính</a></li>
             </div>
             <li class="search-icon">
@@ -79,13 +79,13 @@
                 </a>
             </li>
             <li>
-                <a id="revenue" class="home-mobie-icon" href="<?php echo $actual_link ?>/home/khoanThu">
+                <a id="revenue" class="home-mobie-icon" href="<?php echo $actual_link ?>/home/Thu">
                     <!-- <span class="title-span-click">Thu</span> -->
                     <i class="icon icon--2x fa-solid fa-hand-holding-dollar"></i>
                 </a>
             </li>
             <li>
-                <a id="expense" class="home-mobie-icon" href="<?php echo $actual_link ?>/home/khoanChi">
+                <a id="expense" class="home-mobie-icon" href="<?php echo $actual_link ?>/home/Chi">
                     <!-- <span class="title-span-click">Chi</span> -->
                     <i class="icon icon--2x fa-solid fa-cart-plus"></i>
                 </a>

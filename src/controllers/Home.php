@@ -4,11 +4,11 @@
             $this->checkLogin();
             $this->view("home","Tổng quan","overView",[]);
         }
-        public function khoanthu(){
+        public function thu(){
             $this->checkLogin();
             $this->view("home","Khoản thu","list",[]);
         }
-        public function khoanchi(){
+        public function chi(){
             $this->checkLogin();
             $this->view("home","Khoản chi","list",[]);
         }
