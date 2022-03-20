@@ -4,11 +4,11 @@
     <?php echo $data[0] ?>
 </textarea>
 <br>
-<a href="<?php echo $actual_link ?>/jsonPosessing/binance_api/<?php echo $data[1] - 1 ?>">
+<a href="<?php echo $actual_link ?>/home/usdt/<?php echo $data[1] - 1 ?>">
     về trang trước
 </a>
 <br>
-<a href="<?php echo $actual_link ?>/jsonPosessing/binance_api/<?php echo $data[1] + 1 ?>">
+<a href="<?php echo $actual_link ?>/home/usdt/<?php echo $data[1] + 1 ?>">
     Sang trang sau
 </a>
 

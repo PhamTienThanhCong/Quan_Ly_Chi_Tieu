@@ -47,7 +47,7 @@
                 <li><a href="<?php echo $actual_link ?>/home">Tổng quan</a></li>
                 <li><a href="<?php echo $actual_link ?>/home/Thu">Khoản thu</a></li>
                 <li><a href="<?php echo $actual_link ?>/home/Chi">Khoản chi</a></li>
-                <li><a href="<?php echo $actual_link ?>/home/huTaiChi">Hũ tài chính</a></li>
+                <li><a href="<?php echo $actual_link ?>/home/usdt/1">Tỷ giá USDT</a></li>
             </div>
             <li class="search-icon">
                 <?php if (isset($_SESSION['name'])) { ?>
@@ -91,7 +91,7 @@
                 </a>
             </li>
             <li>
-                <a id="FinancialJar" class="home-mobie-icon" href="<?php echo $actual_link ?>/home/huTaiChi">
+                <a id="FinancialJar" class="home-mobie-icon" href="<?php echo $actual_link ?>/home/usdt/1">
                     <!-- <span class="title-span-click">Hũ</span> -->
                     <i class="icon icon--2x fa-solid fa-scale-balanced"></i>
                 </a>

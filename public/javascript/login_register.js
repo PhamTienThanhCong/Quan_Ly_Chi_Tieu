@@ -59,7 +59,7 @@ $(document).ready(function () {
         let check = true;
         event.preventDefault();
         var currentLocation = window.location;
-        currentLocationHome = currentLocation.protocol + "//" + currentLocation.host + "/home";
+        currentLocationHome = currentLocation.protocol + "//" + currentLocation.host + "/home/overview";
         currentLocation = currentLocation.protocol + "//" + currentLocation.host + "/account/login_processing";
         
         $.ajax({

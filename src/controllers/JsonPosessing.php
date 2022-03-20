@@ -24,9 +24,10 @@ class JsonPosessing extends Controllers{
 
         curl_close($curl);
 
-        $this->view("home","json_data","json_data",[$response,$page]);
+        echo $response;
 
     }
+    
     public function save_data($type){
         if (isset($_SESSION['id']) == false){
             echo "0";
