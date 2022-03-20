@@ -59,6 +59,15 @@ class JsonPosessing extends Controllers{
         // sleep(3);
         echo json_encode($date_res);
     }
+    public function export_all_data(){
+        if (isset($_SESSION['id']) == false){
+            echo "null";
+            exit();
+        }
+        $data = $this->model("data_possessing");
+        $data_res = ["expense" => $data->view_all_data('expense',$_SESSION['id']), "revenue" => $data->view_all_data('revenue',$_SESSION['id'])];
+        echo json_encode($data_res);
+    }
     public function update_data($type){
         if (isset($_SESSION['id']) == false){
             echo "0";

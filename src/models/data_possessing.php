@@ -47,6 +47,15 @@ class data_possessing extends ConnectDB{
         mysqli_close($this->connection);
         return $data;
     }
+    function view_all_data($type,$id){
+        $sql = "SELECT SUM(price_$type) as `Tong` FROM `data_$type` WHERE `id_user` = '$id'";
+        
+        $data_result = mysqli_query($this->connection,$sql);
+        // $data = mysqli_fetch_array($data);
+        $data = mysqli_fetch_array($data_result);
+
+        return $data['Tong'];
+    }
     function data_update($type,$id_user,$id_expense,$title,$price,$description,$created_at){
         $sql = "UPDATE
                     `data_$type`
