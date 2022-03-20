@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: localhost:3306
--- Thời gian đã tạo: Th3 16, 2022 lúc 03:28 PM
+-- Thời gian đã tạo: Th3 20, 2022 lúc 08:10 AM
 -- Phiên bản máy phục vụ: 5.7.33
 -- Phiên bản PHP: 7.4.19
 
@@ -51,7 +51,8 @@ INSERT INTO `data_expense` (`id_expense`, `id_user`, `title_expense`, `price_exp
 (16, 6, 'Đồ đi chơi', 20000, '', '2022-03-16'),
 (17, 6, 'đi xe bus', 20000, '', '2022-03-16'),
 (20, 6, 'Ăn sáng', 20000, '', '2022-03-16'),
-(26, 6, 'Đi tam đảo ngắm mây', 200000, '', '2022-03-16');
+(26, 6, 'Đi tam đảo ngắm mây', 200000, '', '2022-03-16'),
+(27, 6, 'đồ ăn tối', 200000, '', '2022-03-20');
 
 -- --------------------------------------------------------
 
@@ -73,13 +74,11 @@ CREATE TABLE `data_revenue` (
 --
 
 INSERT INTO `data_revenue` (`id_revenue`, `id_user`, `title_revenue`, `price_revenue`, `description_revenue`, `created_at_revenue`) VALUES
-(1, 6, 'Ngủ với Gái', 500000, 'suger momy\r\n', '2022-03-16'),
+(1, 6, 'đi phượt', 500000, 'test\n', '2022-03-16'),
 (2, 6, 'đi đòi nợ', 200000, '', '2022-03-16'),
 (3, 6, 'Đi tam đảo', 123123, '', '2022-03-16'),
-(4, 6, 'Gói hàng shoppe khá đẹp', 12312312, '', '2022-03-16'),
-(5, 6, 'Gói hàng shoppe khá đẹp', 13212312, '', '2022-03-16'),
-(6, 6, 'Gói hàng shoppe khá đẹp', 123123123, '', '2022-03-16'),
-(9, 6, 'Cơ chế phân tầng', 20000, '', '2022-03-16');
+(9, 6, 'Cơ chế phân tầng', 20000, '', '2022-03-16'),
+(10, 6, 'Tiền lương hưu', 250000, '', '2022-03-20');
 
 -- --------------------------------------------------------
 
@@ -100,7 +99,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `email`, `password`, `token`) VALUES
-(6, 'cong pham', 'congphamtienthanh@gmail.com', 'cong', '57246e622e13e550365742b4b39237487e72e3971b54e8182fca');
+(6, 'cong pham', 'congphamtienthanh@gmail.com', '$2y$10$9tVJzRi9YAuNpN9ICFguHOApS4zPlKupMQ6sCk2a26q8B94zVO0l.', '57246e622e13e550365742b4b39237487e72e3971b54e8182fca'),
+(8, 'cong pham', 'congj2school@gmail.com', '$2y$10$zOlnCG3n07F45T/.F1Tjye8Iv84/8BnKfe8ExRUuSSJ29u1YVU..e', '18ce676c97725b6909f278ab7c700eda3a4be0812bd4a4775e5b');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -134,19 +134,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT cho bảng `data_expense`
 --
 ALTER TABLE `data_expense`
-  MODIFY `id_expense` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id_expense` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT cho bảng `data_revenue`
 --
 ALTER TABLE `data_revenue`
-  MODIFY `id_revenue` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_revenue` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
