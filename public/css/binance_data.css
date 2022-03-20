@@ -1,0 +1,20 @@
+#data-respone{
+    display: none;
+}
+#container-respond{
+    width: 100%;
+}
+.item-respond{
+    width: 100%;
+}
+.infor{
+    width: 100%;
+    display: block;
+}
+p{
+    margin-bottom: 0;
+    display: inline-block;
+}
+.name-info{
+    margin-right: 30px;
+}

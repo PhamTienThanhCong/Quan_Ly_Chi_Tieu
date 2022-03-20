@@ -1,6 +1,7 @@
 <?php
 class JsonPosessing extends Controllers{
-    public function binance_api(){
+    public function binance_api($page){
+        $page = $page[0];
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
@@ -12,7 +13,7 @@ class JsonPosessing extends Controllers{
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => 'POST',
-            CURLOPT_POSTFIELDS =>'{"page":1,"rows":10,"payTypes":[],"asset":"USDT","tradeType":"BUY","fiat":"VND","publisherType":null}',
+            CURLOPT_POSTFIELDS =>'{"page":'.$page.',"rows":10,"payTypes":[],"asset":"USDT","tradeType":"BUY","fiat":"VND","publisherType":null}',
             CURLOPT_HTTPHEADER => array(
                 'Content-Type: application/json',
                 'Cookie: cid=FBb5Btvt'
@@ -22,7 +23,8 @@ class JsonPosessing extends Controllers{
         $response = curl_exec($curl);
 
         curl_close($curl);
-        echo $response;
+
+        $this->view("home","json_data","json_data",[$response,$page]);
 
     }
     public function save_data($type){
